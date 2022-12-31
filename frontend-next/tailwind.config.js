@@ -8,7 +8,30 @@ module.exports = {
   ],
   // darkMode: false,
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      }
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'white': '#FFFFFF',
+      'black': '#000000',
+      'green': {
+        DEFAULT: '#53C351',
+        dark: '#1C3A27',
+        light: '#E2EEEC',
+        rich: '#254330',
+        soft: '#F4F9F8',
+        hover: '#359433',
+      },
+      'title': '#2E2E2E',
+      'body': '#808080',
+      'field': '#CCCCCC',
+      'disabled': '#E6E6E6',
+      'image-placeholder': '#EBEBEB',
+    },
   },
   plugins: [],
 }
