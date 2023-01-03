@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Head from "./head";
+import Header from "./Header";
 
 export default function RootLayout({
     // Layouts must accept a children prop.
@@ -11,7 +12,10 @@ export default function RootLayout({
     return (
       <html lang="en">
         <Head />
-        <body className="font-inter">{children}</body>
+        <body className="font-inter">
+          <Header />
+          {children}
+        </body>
       </html>
     );
   }
