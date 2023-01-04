@@ -5,8 +5,8 @@ function Navbar() {
   return (
 
     <nav>
-      <ul className="hidden md:flex space-x-6">
-        <NavbarItem label="Donate" href="#" />
+      <ul className="hidden space-x-6 md:flex">
+        <NavbarItem label="Donate" href="/donate" />
         <NavbarItem label="NFTs" href="#" />
         <NavbarItem label="Marketplace" href="#" />
         <NavbarItem label="Community" href="#" />
