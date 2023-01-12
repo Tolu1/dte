@@ -3,12 +3,10 @@ import Link from "next/link"
 
 function Logo() {
   return (
-    <div className="pt-2">
-      <Link href="/">
-        {/* <Image src="/images/logo.png" alt="logo" width="136" height="56" /> */}
-        <Image src="/images/logo.png" alt="logo" width="102" height="42" />
-      </Link>
-   </div>
+    <Link href="/" title="" className="flex items-center space-x-1">
+        <img className="w-6 h-6" src="/images/logo.svg" alt="" />
+        <h1 className=" font-inter text-green-rich font-semibold tracking-wider">|DRESS THE EARTH|</h1>
+    </Link>
   )
 }
 

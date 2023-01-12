@@ -1,6 +1,10 @@
 import Link from "next/link"
 import { ReactNode } from "react";
-import { NavbarItemProps } from "../typings";
+
+export type NavbarItemProps = {
+  label: string;
+  href: string;
+}
 
 // function NavbarItem({label: string, href: string}) {
 //   return (
