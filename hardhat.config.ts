@@ -2,6 +2,8 @@ import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import * as fs from 'fs';
 import * as path from 'path';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Sample Hardhat Task for printing accounts on the blockchain
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -48,13 +50,19 @@ task('copy-abis', 'Copies the ABI files from the artifacts/contracts directory t
   }
 });
 
+const { API_URL, PRIVATE_KEY } = process.env;
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.17",
+  solidity: "0.8.9",
+  defaultNetwork: "localhost",
   networks: {
+    hardhat: {},
+    localhost: {
+      url: "http://127.0.0.1:8545"
+    },
     goerli: {
-      url:"https://eth-goerli.g.alchemy.com/v2/UmDOCMMrExff1HEWIzPKiwYGdfupbQkV",
-      accounts: ["fe33cb9bf5eb6d9eceb75159211a817a29901a92c4d1e16bbb11ee82e24ae2c6"]
+      url:API_URL,
+      accounts: [`0x${PRIVATE_KEY}`]
     } 
   }
 };
