@@ -19,7 +19,7 @@ const AddCharity = ({setShowModal}: {setShowModal: React.Dispatch<React.SetState
                 >
                     <div className="px-4 py-5 sm:p-6">
                         <p className="text-xl font-bold text-gray-900">Create New Charity</p>
-                        <p className="mt-3 text-sm font-medium text-gray-500">Lorem ipsum dolor sit amet, consec tetur adipiscing elit.</p>
+                        <p className="mt-3 text-sm font-medium text-gray-500">Only admins are allowed to add a new charity organization.</p>
 
                         <form action="#" method="POST" className="mt-6">
                             <div className="space-y-4">
@@ -38,10 +38,25 @@ const AddCharity = ({setShowModal}: {setShowModal: React.Dispatch<React.SetState
                                 </div>
 
                                 <div>
-                                    <label htmlFor="" className="text-sm font-bold text-gray-900"> User Role </label>
+                                    <label htmlFor="" className="text-sm font-bold text-gray-900"> Website </label>
+                                    <div className="mt-2">
+                                        <input type="text" name="" id="" placeholder="www.sustainableagric.org" className="block w-full px-4 py-3 placeholder-gray-500 border border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="" className="text-sm font-bold text-gray-900"> Wallet Address </label>
+                                    <div className="mt-2">
+                                        <input type="text" name="" id="" placeholder="0x00000000000000000000000000000000" className="block w-full px-4 py-3 placeholder-gray-500 border border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="" className="text-sm font-bold text-gray-900"> Activate Charity </label>
                                     <div className="mt-2">
                                         <select className="block w-full py-3 pl-4 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm">
-                                            <option>Editor</option>
+                                            <option>Yes</option>
+                                            <option>No</option>
                                         </select>
                                     </div>
                                 </div>

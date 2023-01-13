@@ -9,7 +9,6 @@ function Hero() {
 
                         <h1 className="mt-6 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl xl:text-7xl sm:tracking-tight">Dress Mother Earth in Green.☘️</h1>
                     </div>
-                    <p>Hi there!</p>
                     <div className="mt-6 lg:mt-auto">
                         <p className="text-lg leading-7 text-gray-700 lg:leading-8 lg:text-xl">💚Join the green revolution, make a difference. Donate in ether, win NFTs with amazing benefits for eco-friendly shopping, and help make the world a better place.💚</p>
                         <div className="mt-10">
@@ -38,7 +37,7 @@ function Hero() {
                                     <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" height="22px" width="22px"/>                                    
                                     <div className="ml-4">
                                         <p className="text-3xl font-semibold text-gray-900">0.0000219</p>
-                                        <p className="mt-1 text-lg font-normal text-gray-700"> ETH in donations was sent in the last week</p>
+                                        <p className="mt-1 text-lg font-normal text-gray-700"> ETH in donations was sent just now!</p>
                                     </div>
                                 </div>
                             </div>

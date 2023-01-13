@@ -16,7 +16,7 @@ const Charity = () => {
             </div>
 
             <a href="#" title="" className="block mt-4 overflow-hidden rounded-lg aspect-w-3 aspect-h-2">
-                <img className="object-cover w-full h-full" src="https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                <img className="object-cover w-full h-full" src="https://cdn.pixabay.com/photo/2016/11/29/08/51/forest-1868529_960_720.jpg" alt="" />
             </a>
 
             <div className="mt-4">
@@ -62,7 +62,7 @@ const CharityList = () => {
                 <div className="text-center md:flex md:items-end md:space-x-6 md:justify-between md:text-left">
                     <div className="flex-1 max-w-sm mx-auto md:mx-0">
                         <h2 className="text-2xl font-bold text-gray-900">Featured Charities 💚</h2>
-                        <p className="mt-4 text-base font-medium text-gray-500">In a creative workplace, employees responsibly try different solutions.</p>
+                        <p className="mt-4 text-base font-medium text-gray-500">Explore positive impact, empower green communities.</p>
                     </div>
 
                     <div className="mt-6 md:mt-0">
