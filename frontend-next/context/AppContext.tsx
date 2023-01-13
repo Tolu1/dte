@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { createContext, useEffect, useState } from "react";
 import detectEthereumProvider from '@metamask/detect-provider';
@@ -27,9 +28,14 @@ export const AppContext = createContext({ connected: false, account: "", connect
         const accounts = await ethereum.request({
           method: "eth_accounts",
         });
-        setConnected(true);
-        console.log(accounts);
-        setAccount(accounts[0]);
+        console.log(`accounts: ${accounts} from getConnectedAccounts()`);
+        if (accounts.length != 0) {
+          setConnected(true);
+          setAccount(accounts[0]);
+        }
+        // setConnected(true);
+        // console.log(accounts);
+        // setAccount(accounts[0]);
       } catch (err: any) {
         setError(err.message);
       }
@@ -45,9 +51,14 @@ export const AppContext = createContext({ connected: false, account: "", connect
         const accounts = await ethereum.request({
           method: "eth_requestAccounts",
         });
-        setConnected(true);
-        console.log(accounts);
-        setAccount(accounts[0]);
+        console.log(`accounts: ${accounts} from connectWallet()`);
+        if (accounts.length != 0) {
+          setConnected(true);
+          setAccount(accounts[0]);
+        }
+        // setConnected(true);
+        // console.log(accounts);
+        // setAccount(accounts[0]);
       } catch (err: any) {
         setError(err.message);
       }
