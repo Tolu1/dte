@@ -4,6 +4,7 @@ import { AppContext } from "../../context/AppContext";
 import { CharityContext } from "../../context/CharityContext";
 import FormProvider from "../../context/FormContext";
 import AddCharity from "./AddCharity";
+// @ts-ignore ethers/utils clearly exists
 import { Address } from "ethers/utils";
 import { compressAddress } from "../../utils/helper";
 
