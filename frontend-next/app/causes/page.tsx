@@ -1,5 +1,6 @@
 "use client";
 import React, { Suspense, useContext, useEffect, useState } from "react";
+import { ethers } from "ethers";
 import { AppContext } from "../../context/AppContext";
 import { CharityContext } from "../../context/CharityContext";
 import FormProvider from "../../context/FormContext";
@@ -7,6 +8,9 @@ import AddCharity from "./AddCharity";
 // @ts-ignore ethers/utils clearly exists
 import { Address } from "ethers/utils";
 import { compressAddress } from "../../utils/helper";
+import Modal from "./Modal";
+import Donate from "./Donate";
+import DonationProvider from "../../context/DonationContext";
 
 type CharityProps = {
   id: number;
@@ -18,6 +22,14 @@ type CharityProps = {
   wallet: Address;
 };
 
+interface CharityPropsWithDonationModal extends CharityProps {
+  // toggleModal: () => void;
+  donationProps: {
+    setCharity: (charityId: number) => void;
+    toggleDonationModal: () => void;
+  };
+}
+
 const Charity = ({
   id,
   name,
@@ -26,7 +38,14 @@ const Charity = ({
   totalDonation,
   active,
   wallet,
-}: CharityProps) => {
+  donationProps,
+}: CharityPropsWithDonationModal) => {
+  const { setCharity, toggleDonationModal } = donationProps;
+  const handleClick = () => {
+    toggleDonationModal();
+    setCharity(id);
+  };
+
   return (
     <div
       id={id.toString()}
@@ -85,13 +104,21 @@ const Charity = ({
             </div>
           </div>
           <p className="mt-2 text-base font-bold text-gray-900">
-            <a href="#" title="">
-              {" "}
-              {name}{" "}
-            </a>
+            <div className="flex items-center">
+              <a href={website} title="">
+                {" "}
+                {name}{" "}
+              </a>
+              <img
+                className="w-5 h-5 "
+                src="/images/verified.png"
+                alt="verified"
+              />
+            </div>
           </p>
           <p className="mt-2 text-sm font-medium text-green">
-            Total Donation {totalDonation.toString()} ETH
+            Total Donation {ethers.utils.formatEther(totalDonation.toString())}{" "}
+            ETH
           </p>
         </div>
 
@@ -106,6 +133,7 @@ const Charity = ({
           <button
             type="button"
             className="inline-flex items-center justify-center w-full px-3 py-2 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-green border border-transparent rounded md:px-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-700"
+            onClick={handleClick}
           >
             Donate
           </button>
@@ -115,7 +143,7 @@ const Charity = ({
   );
 };
 
-const DefaultCharity = ({}) => {
+const DefaultCharity = ({ toggleModal }: { toggleModal: () => void }) => {
   return (
     <div className="overflow-hidden transition-all duration-200 transform bg-white border border-gray-100 rounded-lg hover:shadow-lg hover:-translate-y-1">
       <div className="p-4">
@@ -165,10 +193,17 @@ const DefaultCharity = ({}) => {
             </div>
           </div>
           <p className="mt-2 text-base font-bold text-gray-900">
-            <a href="#" title="">
-              {" "}
-              The African Climate Fund{" "}
-            </a>
+            <div className="flex items-center space-x-1">
+              <a href="#" title="">
+                {" "}
+                The African Climate Fund{" "}
+              </a>
+              <img
+                className="w-5 h-5 "
+                src="/images/verified.png"
+                alt="verified"
+              />
+            </div>
           </p>
           <p className="mt-2 text-sm font-medium text-green">
             Total Donation 2.301 ETH
@@ -186,6 +221,7 @@ const DefaultCharity = ({}) => {
           <button
             type="button"
             className="inline-flex items-center justify-center w-full px-3 py-2 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-green border border-transparent rounded md:px-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-700"
+            onClick={toggleModal}
           >
             Donate
           </button>
@@ -196,7 +232,19 @@ const DefaultCharity = ({}) => {
 };
 
 const CharityList = () => {
+  // Modal control for create charity form
   const [showModal, setShowModal] = useState(false);
+
+  // Modal control for donation modal
+  const [showDonationModal, setShowDonationModal] = useState(false);
+  const toggleDonationModal = () => setShowDonationModal(!showDonationModal);
+
+  // Charity Id selector
+  const [charityIdSelector, setCharityIdSelector] = useState(-1);
+  const setCharity = (charityId: number) => {
+    setCharityIdSelector(charityId);
+  };
+
   const { isOwner } = useContext(AppContext);
   const { getCharities } = useContext(CharityContext);
   const [charities, setCharities] = useState<CharityProps[]>([]);
@@ -261,7 +309,7 @@ const CharityList = () => {
               {/* // @ts-ignore */}
               {charities.map((charity) => (
                 <Charity
-                  // key={charity.id}
+                  key={charity.id}
                   id={charity.id}
                   name={charity.name}
                   mission={charity.mission}
@@ -269,11 +317,22 @@ const CharityList = () => {
                   totalDonation={charity.totalDonation}
                   active={charity.active}
                   wallet={charity.wallet}
+                  donationProps={{ setCharity, toggleDonationModal }}
+                  // toggleModal={toggleDonationModal}
                 />
               ))}
             </>
-            <DefaultCharity />
+            <DefaultCharity toggleModal={toggleDonationModal} />
           </div>
+          <DonationProvider>
+            <Modal isOpen={showDonationModal} onClose={toggleDonationModal}>
+              <Donate
+                charityId={charityIdSelector}
+                charity={charities[charityIdSelector]}
+                onClose={toggleDonationModal}
+              />
+            </Modal>
+          </DonationProvider>
           {showModal ? <AddCharity setShowModal={setShowModal} /> : null}
         </div>
       </section>
