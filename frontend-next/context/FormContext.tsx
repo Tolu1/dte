@@ -22,7 +22,7 @@ export const FormContext = createContext({
     active: false,
     wallet: "",
   },
-  // @ts-ignore For some reason Dispatch' does not exist on React
+  // @ts-expect-error For some reason Dispatch' does not exist on React
   setFormData: React.Dispatch<
     React.SetStateAction<{
       name: string;
@@ -70,7 +70,15 @@ function FormProvider({ children }: { children: React.ReactNode }) {
     if (ethereum) {
       const contract = loadContractWithSigner();
       console.log(contract);
-      await contract?.addCharity(name, mission, website, active, wallet);
+      const tx = await contract?.addCharity(
+        name,
+        mission,
+        website,
+        active,
+        wallet
+      );
+      await tx.wait();
+      console.log("-------------------------");
       console.log(await contract?.charityIdCounter());
     } else {
       console.error("Please install MetaMask!");

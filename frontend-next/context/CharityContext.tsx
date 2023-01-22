@@ -75,10 +75,10 @@ function CharityProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const handleCharities = async () => {
       console.log("debugging charity context");
-      contract?.on(
-        "CharityAdded",
-        async (charityId, name, mission, website, active, wallet) => {}
-      );
+      // contract?.on(
+      //   "CharityAdded",
+      //   async (charityId, name, mission, website, active, wallet) => {}
+      // );
       // const charities = await _getCharities();
       // console.log(`charities: ${charities}`);
       // setCharities(charities); //Giving errors due to buggy nextjs 13 appdir

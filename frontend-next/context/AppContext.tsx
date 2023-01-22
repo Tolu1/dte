@@ -145,10 +145,10 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
       if (ethereum) {
         ethereum.on("accountsChanged", getConnectedAccounts);
         await getConnectedAccounts();
-        contract?.on("DonationMade", async (charityId, donor, amount) => {
-          console.log(`${donor} donated ${amount} to Charity ${charityId}`);
-          setLatestDonation(amount);
-        });
+        // contract?.on("DonationMade", async (charityId, donor, amount) => {
+        //   console.log(`${donor} donated ${amount} to Charity ${charityId}`);
+        //   setLatestDonation(amount);
+        // });
         console.log(`error: ${error}`);
       }
     };

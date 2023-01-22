@@ -1,6 +1,7 @@
 "use client";
-import React, { useContext, useEffect } from "react";
-import { FormContext } from "../../context/FormContext";
+import React, { useContext, useState } from "react";
+import { FormContext } from "@/context/FormContext";
+import { useRouter } from "next/router";
 
 function AddCharity({
   setShowModal,
@@ -8,12 +9,21 @@ function AddCharity({
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const { handleChange, handleSubmit } = useContext(FormContext);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmitForm = (
+  const router = useRouter();
+  const refreshData = () => {
+    router.replace(router.asPath);
+  };
+
+  const handleSubmitForm = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    handleSubmit(e);
+    setIsSubmitting(true);
+    await handleSubmit(e);
+    refreshData();
     setShowModal(false);
+    setIsSubmitting(false);
   };
 
   return (
@@ -150,13 +160,29 @@ function AddCharity({
                   Cancel
                 </button>
 
-                <button
+                {!isSubmitting ? (
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold leading-5 text-white transition-all duration-200 bg-indigo-600 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 hover:bg-indigo-500"
+                    onClick={(e) => handleSubmitForm(e)}
+                  >
+                    Add
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold leading-5 text-white transition-all duration-200 bg-indigo-600 border border-transparent rounded-md animate-pulse focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 hover:bg-indigo-500 cursor-not-allowed pointer-events-none"
+                  >
+                    Add
+                  </button>
+                )}
+                {/* <button
                   type="submit"
                   className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold leading-5 text-white transition-all duration-200 bg-indigo-600 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 hover:bg-indigo-500"
                   onClick={(e) => handleSubmitForm(e)}
                 >
                   Add
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

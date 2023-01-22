@@ -1,8 +1,7 @@
-"use client";
 import Link from "next/link";
 import React from "react";
 import { useContext } from "react";
-import AppProvider, { AppContext } from "../context/AppContext";
+import { AppContext } from "../context/AppContext";
 import { compressAddress } from "../utils/helper";
 
 function ConnectWallet() {

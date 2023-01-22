@@ -1,6 +1,7 @@
+import Link from "next/link";
 import DonationHighlight from "./DonationHighlight";
 
-function Hero() {
+function Hero({ latestDonationValue }: { latestDonationValue: number }) {
   return (
     <section className="py-12 bg-white sm:py-16 lg:py-20 xl:py-24">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -23,14 +24,14 @@ function Hero() {
                 help make the world a better place.💚
               </p>
               <div className="mt-10">
-                <a
-                  href="#"
+                <Link
+                  href="/causes"
                   title=""
                   className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-green border border-transparent rounded-xl hover:bg-green-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-rich"
                   role="button"
                 >
                   Make a Donation Today
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -52,7 +53,7 @@ function Hero() {
                 alt=""
               />
 
-              <DonationHighlight />
+              <DonationHighlight latestDonationValue={latestDonationValue} />
             </div>
           </div>
         </div>

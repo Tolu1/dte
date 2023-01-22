@@ -4,12 +4,31 @@ import { loadContractWithSigner } from "../utils/interactions";
 import { ethers } from "ethers";
 
 export const DonationContext = createContext({
-  makeDonation: async (charityId: number) => {},
+  charityInFocus: -1,
+  setCurrentCharityInFocus: (charityInFocus: number) => {},
+  donationInProgress: false,
+  transactionHash: "",
+  transactionConfirmed: false,
+  setConfirmed: (transactionConfirmed: boolean) => {},
+  isSuccessful: false,
+  setIsSuccessfulFlag: (isSuccessful: boolean) => {},
   handleAmount: (e: React.ChangeEvent<HTMLInputElement>, name: string) => {},
+  makeDonation: async (charityId: number) => {},
 });
 
 function DonationProvider({ children }: { children: React.ReactNode }) {
+  const [charityInFocus, setCharityInFocus] = useState(-1);
+  const setCurrentCharityInFocus = (charityInFocus: number) =>
+    setCharityInFocus(charityInFocus);
   const [donationAmount, setDonationAmount] = useState({ amount: 0 });
+  const [donationInProgress, setdonationInProgress] = useState(false);
+  const [transactionHash, settransactionHash] = useState("");
+  const [transactionConfirmed, setTransactionConfirmed] = useState(false);
+  const setConfirmed = (transactionConfirmed: boolean) =>
+    setTransactionConfirmed(transactionConfirmed);
+  const [isSuccessful, setIsSuccessful] = useState(false);
+  const setIsSuccessfulFlag = (isSuccessful: boolean) =>
+    setIsSuccessful(isSuccessful);
 
   const handleAmount = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -23,20 +42,45 @@ function DonationProvider({ children }: { children: React.ReactNode }) {
   };
 
   const makeDonation = async (charityId: number) => {
+    setCurrentCharityInFocus(charityId);
+    settransactionHash("");
+    setTransactionConfirmed(false);
+    setdonationInProgress(true);
     const { amount } = donationAmount;
-    // const decimals = 18;
     const value = ethers.utils.parseUnits(amount.toString(), "ether");
     const contract = loadContractWithSigner();
     console.log(`donating to ${charityId}`);
     console.log(`donating...${amount}`);
     console.log(`donating...${value}`);
-    await contract?.donate(charityId, {
-      value: ethers.utils.parseUnits(amount.toString(), "ether"),
-    });
+    try {
+      const tx = await contract?.donate(charityId, {
+        value: ethers.utils.parseUnits(amount.toString(), "ether"),
+      });
+      settransactionHash(tx.hash);
+      await tx.wait();
+      setTransactionConfirmed(true);
+      setIsSuccessful(true);
+    } catch (err: any) {
+      console.log(err.message);
+    }
+    setdonationInProgress(false);
   };
 
   return (
-    <DonationContext.Provider value={{ handleAmount, makeDonation }}>
+    <DonationContext.Provider
+      value={{
+        charityInFocus,
+        setCurrentCharityInFocus,
+        transactionConfirmed,
+        setConfirmed,
+        transactionHash,
+        donationInProgress,
+        isSuccessful,
+        setIsSuccessfulFlag,
+        handleAmount,
+        makeDonation,
+      }}
+    >
       {children}
     </DonationContext.Provider>
   );
