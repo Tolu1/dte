@@ -37,14 +37,14 @@ function Loading() {
           <div className="fixed top-0 z-[9998] w-full h-full">
             <div className="w-screen h-screen flex justify-center items-center bg-white">
               <img
-                className="w-10 h-10 lg:w-11 lg:h-11 xl:w-16 xl:h-16"
+                className="w-11 h-11 lg:w-12 lg:h-12 xl:w-16 xl:h-16"
                 src="/images/plant.gif"
                 alt=""
               />
             </div>
           </div>
           <div className="fixed top-0 z-[9999] w-full h-full">
-            <div className="w-screen h-screen bg-green opacity-10"></div>
+            <div className="w-screen h-screen bg-green opacity-[0.03]"></div>
           </div>
         </div>
       ) : (

@@ -55,7 +55,7 @@ function Charity({
             />
             {/* NOTE: link below will change in production */}
             <a
-              href={`https://goerli.etherscan.io/address/${wallet}`}
+              href={`https://goerli.etherscan.io/address/${wallet}#internaltx`}
               target="_blank"
               rel="noreferrer"
               title=""

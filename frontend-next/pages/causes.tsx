@@ -99,7 +99,11 @@ function Causes({ charities }: { charities: Charity[] }) {
             </div>
 
             <DonationProvider>
-              <Modal isOpen={showDonationModal} onClose={toggleDonationModal}>
+              <Modal
+                overlayHeader={true}
+                isOpen={showDonationModal}
+                onClose={toggleDonationModal}
+              >
                 <Donate
                   charityId={charityIdSelector}
                   charity={charities[charityIdSelector]}

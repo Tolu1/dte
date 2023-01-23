@@ -25,7 +25,7 @@ function Navbar() {
     <>
       <nav className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-12">
         <NavbarItem label="Causes" href="/causes" />
-        <NavbarItem label="Shop" href="#" />
+        <NavbarItem label="Shop" href="/shop" />
         <NavbarItem label="Community" href="/community" />
         <NavbarItem label="About" href="/about" />
       </nav>
