@@ -27,7 +27,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600"
+                  className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-green-600 focus:bg-green-600"
                 >
                   <svg
                     className="w-4 h-4"
@@ -44,7 +44,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600"
+                  className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-green-600 focus:bg-green-600"
                 >
                   <svg
                     className="w-4 h-4"
@@ -61,7 +61,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600"
+                  className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-green-600 focus:bg-green-600"
                 >
                   <svg
                     className="w-4 h-4"
@@ -80,7 +80,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600"
+                  className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-green-600 focus:bg-green-600"
                 >
                   <svg
                     className="w-4 h-4"
@@ -101,52 +101,52 @@ function Footer() {
 
           <div>
             <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">
-              Company
+              Organization
             </p>
 
             <ul className="mt-6 space-y-4">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/about"
                   title=""
-                  className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black transition-all duration-200 hover:text-green-600 focus:text-green-600"
                 >
                   {" "}
                   About{" "}
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/causes"
                   title=""
-                  className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black transition-all duration-200 hover:text-green-600 focus:text-green-600"
                 >
                   {" "}
                   Causes{" "}
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/shop"
                   title=""
-                  className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black transition-all duration-200 hover:text-green-600 focus:text-green-600"
                 >
                   {" "}
                   Shop{" "}
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/community"
                   title=""
-                  className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black transition-all duration-200 hover:text-green-600 focus:text-green-600"
                 >
                   {" "}
                   Community{" "}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -161,7 +161,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black transition-all duration-200 hover:text-green-600 focus:text-green-600"
                 >
                   {" "}
                   Add Your Charity{" "}
@@ -172,7 +172,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black transition-all duration-200 hover:text-green-600 focus:text-green-600"
                 >
                   {" "}
                   FAQs{" "}
@@ -183,7 +183,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black transition-all duration-200 hover:text-green-600 focus:text-green-600"
                 >
                   {" "}
                   Terms & Conditions{" "}
@@ -194,7 +194,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+                  className="flex text-base text-black transition-all duration-200 hover:text-green-600 focus:text-green-600"
                 >
                   {" "}
                   Privacy Policy{" "}
@@ -218,13 +218,13 @@ function Footer() {
                   name="email"
                   id="email"
                   placeholder="Enter your email"
-                  className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
+                  className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-green-600 caret-green-600"
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-blue-600 rounded-md hover:bg-blue-700 focus:bg-blue-700"
+                className="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-green rounded-md hover:bg-green-700 focus:bg-green-700"
               >
                 Subscribe
               </button>
