@@ -26,7 +26,7 @@ export default function Home({
       <main>
         <Hero latestDonationValue={latestDonationValue} />
         {/* <CharitySpotlight /> */}
-        {/* <Mission /> */}
+        <Mission />
       </main>
     </>
   );
