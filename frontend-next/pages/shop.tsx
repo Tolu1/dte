@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import Modal from "@/components/Modal";
 
 function Shop() {
@@ -8,6 +9,15 @@ function Shop() {
 
   return (
     <>
+      <Head>
+        <title>Dress The Earth - Shop With Us</title>
+        <meta
+          name="description"
+          content="The Green Charity Transparency Platform"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <section className="py-12 bg-white sm:py-16 lg:py-20">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center lg:text-left">

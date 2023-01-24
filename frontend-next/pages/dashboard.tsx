@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Head from "next/head";
 import DashboardHighlight from "@/components/DashboardHighlight";
 import DashboardDonations from "@/components/DashboardDonations";
 import { CONTRACT_ADDRESS } from "utils/constants";
@@ -22,29 +23,40 @@ function Dashboard({
   const { connected, account } = useContext(AppContext);
 
   return (
-    <section className="py-12 bg-white sm:py-16 lg:py-20">
-      <div className="py-6">
-        <div className="px-4 mx-auto sm:px-6 md:px-8">
-          <div className="md:items-center md:flex">
-            <p className="text-base font-bold text-gray-800">Hello, You -</p>
-            <p className="mt-1 text-base font-medium text-gray-500 md:mt-0 md:ml-2">
-              here&apos;s what&apos;s happening on Dress The Earth
-            </p>
+    <>
+      <Head>
+        <title>Dress The Earth - Dashboard</title>
+        <meta
+          name="description"
+          content="The Green Charity Transparency Platform"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <section className="py-12 bg-white sm:py-16 lg:py-20">
+        <div className="py-6">
+          <div className="px-4 mx-auto sm:px-6 md:px-8">
+            <div className="md:items-center md:flex">
+              <p className="text-base font-bold text-gray-800">Hello, You -</p>
+              <p className="mt-1 text-base font-medium text-gray-500 md:mt-0 md:ml-2">
+                here&apos;s what&apos;s happening on Dress The Earth
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="px-4 mx-auto mt-8 sm:px-6 md:px-8">
-          <div className="space-y-5 sm:space-y-6">
-            <DashboardHighlight donations={donations} />
-            <DashboardDonations
-              donations={donations}
-              txinternal={txinternal}
-              charities={charities}
-            />
+          <div className="px-4 mx-auto mt-8 sm:px-6 md:px-8">
+            <div className="space-y-5 sm:space-y-6">
+              <DashboardHighlight donations={donations} />
+              <DashboardDonations
+                donations={donations}
+                txinternal={txinternal}
+                charities={charities}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
