@@ -14,12 +14,14 @@ interface Charity {
 }
 
 interface CharityContextType {
-  // charities: Charity[];
+  charities: Charity[];
+  setCharitiesData: (charities: Charity[]) => void;
   getCharities: () => Promise<Charity[]>;
 }
 
 export const CharityContext = createContext<CharityContextType>({
-  // charities: [],
+  charities: [],
+  setCharitiesData: (charities: Charity[]) => {},
   getCharities: async () => {
     return [];
   },
@@ -28,6 +30,9 @@ export const CharityContext = createContext<CharityContextType>({
 function CharityProvider({ children }: { children: React.ReactNode }) {
   const contract = loadContract();
   const [charities, setCharities] = useState<Charity[]>([]);
+  const setCharitiesData = (charities: Charity[]) => {
+    setCharities(charities);
+  };
 
   // @ts-ignore for now!!!!! TODO: also catch the error here
   // const { ethereum } = typeof window !== "undefined" ? window : {};
@@ -88,7 +93,9 @@ function CharityProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <CharityContext.Provider value={{ getCharities }}>
+    <CharityContext.Provider
+      value={{ getCharities, charities, setCharitiesData }}
+    >
       {children}
     </CharityContext.Provider>
   );

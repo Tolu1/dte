@@ -27,9 +27,9 @@ function NavbarHamburger() {
         <div className="grid gap-y-7">
           <NavbarHamburgerItem label="Causes" href="/causes" />
           <NavbarHamburgerItem label="Shop" href="/shop" />
-          <NavbarHamburgerItem label="Community" href="/community" />
-          <NavbarHamburgerItem label="About" href="/about" />
-          <NavbarHamburgerItem label="Dashboard" href="#" />
+          {/* <NavbarHamburgerItem label="Community" href="/community" /> */}
+          {/* <NavbarHamburgerItem label="About" href="/about" /> */}
+          <NavbarHamburgerItem label="Dashboard" href="/dashboard" />
           <ConnectWallet />
         </div>
       </div>

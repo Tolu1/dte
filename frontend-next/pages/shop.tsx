@@ -11,7 +11,7 @@ function Shop() {
       <section className="py-12 bg-white sm:py-16 lg:py-20">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center lg:text-left">
-            <h2 className="text-2xl font-bold text-gray sm:text-3xl">
+            <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl">
               Our Eco-friendly Products💚
             </h2>
           </div>

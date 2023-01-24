@@ -53,7 +53,7 @@ function Causes({ charities }: { charities: Charity[] }) {
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="text-center md:flex md:items-end md:space-x-6 md:justify-between md:text-left">
               <div className="flex-1 max-w-sm mx-auto md:mx-0">
-                <h2 className="text-2xl font-bold text-gray-900">
+                <h2 className="text-2xl font-bold text-gray-800">
                   Featured Causes 💚
                 </h2>
                 <p className="mt-4 text-base font-medium text-gray-500">
