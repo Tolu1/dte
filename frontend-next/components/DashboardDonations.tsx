@@ -260,17 +260,25 @@ function DashboardDonations({
       </div>
 
       <div className="divide-y divide-gray-200">
-        <>
-          {userDonations.map((donation, index) => (
-            <Donation
-              key={index}
-              donation={donation}
-              txinternal={txinternal}
-              charities={charities}
-            />
-          ))}
-        </>
-        <DefaultDonation />
+        {connected ? (
+          <>
+            {userDonations.map((donation, index) => (
+              <Donation
+                key={index}
+                donation={donation}
+                txinternal={txinternal}
+                charities={charities}
+              />
+            ))}
+            <DefaultDonation />
+          </>
+        ) : (
+          <div className="flex justify-center p-10 pb-12">
+            <div className="font-medium text-xl text-gray-300">
+              Please connect your wallet to view your account information.
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
