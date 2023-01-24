@@ -257,7 +257,7 @@ function Donate({
                         min="0"
                         step="0.0001"
                         placeholder="0 ETH"
-                        className="block w-1/2 h-5 px-3 py-3 placeholder-gray-500 border-b border-gray-300 outline-none focus:ring-green-600 focus:border-gray-400 sm:text-sm caret-green-600"
+                        className="block w-1/2 h-5 px-3 py-3 placeholder-gray-500 border-b-2 border-gray-300 outline-none rounded-none focus:ring-green-600 focus:border-gray-400 sm:text-sm caret-green-600"
                         onChange={(e) => {
                           handleAmount(e, e.currentTarget.name);
                         }}
