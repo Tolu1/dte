@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import Head from "next/head";
 import { AppContext } from "@/context/AppContext";
-import { CharityContext } from "@/context/CharityContext";
 import FormProvider from "@/context/FormContext";
 import AddCharity from "@/components/AddCharity";
 import { GetServerSideProps } from "next";
