@@ -12,6 +12,7 @@ export const DonationContext = createContext({
   setConfirmed: (transactionConfirmed: boolean) => {},
   isSuccessful: false,
   setIsSuccessfulFlag: (isSuccessful: boolean) => {},
+  donationAmount: { amount: 0 },
   handleAmount: (e: React.ChangeEvent<HTMLInputElement>, name: string) => {},
   makeDonation: async (charityId: number) => {},
 });
@@ -77,6 +78,7 @@ function DonationProvider({ children }: { children: React.ReactNode }) {
         donationInProgress,
         isSuccessful,
         setIsSuccessfulFlag,
+        donationAmount,
         handleAmount,
         makeDonation,
       }}

@@ -32,6 +32,7 @@ function Donate({
     transactionHash,
     transactionConfirmed,
     setConfirmed,
+    donationAmount,
     handleAmount,
     makeDonation,
   } = useContext(DonationContext);
@@ -238,19 +239,17 @@ function Donate({
                       <p className="whitespace-nowrap text-base font-bold text-gray-900 lg:whitespace-normal">
                         {charity.name}
                       </p>
-                      {/* <div className="relative top-[-3px]"> */}
                       <img
                         className="w-5 h-5"
                         src="/images/verified-animated.gif"
                         alt="verified"
                       />
-                      {/* </div> */}
                     </div>
 
                     <div className="flex items-center space-x-2">
-                      <p className=" md:whitespace-nowrap mt-1 text-sm font-medium text-gray-500">
+                      {/* <p className=" md:whitespace-nowrap mt-1 text-sm font-medium text-gray-500">
                         $: 0.0
-                      </p>
+                      </p> */}
                       <input
                         type="number"
                         name="amount"
@@ -258,7 +257,7 @@ function Donate({
                         min="0"
                         step="0.0001"
                         placeholder="0 ETH"
-                        className="block w-1/2 h-5 px-3 py-3 placeholder-gray-500 border border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600"
+                        className="block w-1/2 h-5 px-3 py-3 placeholder-gray-500 border-b border-gray-300 outline-none focus:ring-green-600 focus:border-gray-400 sm:text-sm caret-green-600"
                         onChange={(e) => {
                           handleAmount(e, e.currentTarget.name);
                         }}
@@ -273,7 +272,11 @@ function Donate({
               {connected ? (
                 <button
                   type="button"
-                  className="inline-flex items-center justify-center w-full px-6 py-4 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-green border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-green-hover"
+                  className={`inline-flex items-center justify-center w-full px-6 py-4 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-green border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-green-hover ${
+                    donationAmount.amount > 0
+                      ? ""
+                      : "opacity-60 cursor-not-allowed pointer-events-none"
+                  }`}
                   onClick={(e) => handleDonate(e)}
                 >
                   Donate
