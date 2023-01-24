@@ -25,12 +25,15 @@ function Header() {
           <div id="hamburger" className="flex lg:hidden">
             <button
               type="button"
-              className="text-gray-900"
+              className="text-gray-900 transition all duration-200 select-none"
               onClick={() => setExpanded(!expanded)}
               aria-expanded={expanded}
             >
               {!expanded ? (
-                <span aria-hidden="true">
+                <span
+                  className="transition all duration-200 select-none"
+                  aria-hidden="true"
+                >
                   <svg
                     className="w-7 h-7"
                     xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +50,10 @@ function Header() {
                   </svg>
                 </span>
               ) : (
-                <span aria-hidden="true">
+                <span
+                  className="transition all duration-200 select-none"
+                  aria-hidden="true"
+                >
                   <svg
                     className="w-7 h-7"
                     xmlns="http://www.w3.org/2000/svg"
