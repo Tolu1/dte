@@ -236,7 +236,8 @@ function Donate({
 
                   <div className="flex-1 space-y-2 ml-4">
                     <div className="flex items-center space-x-1">
-                      <p className="whitespace-nowrap text-base font-bold text-gray-900 lg:whitespace-normal">
+                      {/* <p className="whitespace-nowrap text-base font-bold text-gray-900 lg:whitespace-normal"> */}
+                      <p className="text-base font-bold text-gray-900">
                         {charity.name}
                       </p>
                       <img
