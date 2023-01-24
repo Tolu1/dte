@@ -62,7 +62,7 @@ function Charity({
               className="ml-2 text-sm font-medium text-gray-900"
             >
               {" "}
-              {compressAddress(wallet.toUpperCase())}{" "}
+              {compressAddress(wallet.toLowerCase())}{" "}
             </a>
           </div>
           {active ? (
