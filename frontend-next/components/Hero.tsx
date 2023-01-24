@@ -52,11 +52,21 @@ function Hero({ latestDonationValue }: { latestDonationValue: number }) {
                   }}
                 ></div>
               </div>
-              <img
+              {/* <img
                 className="relative w-full max-w-xs mx-auto sm:max-w-sm rounded-2xl"
                 src="/images/woman.jpeg"
                 alt=""
-              />
+              /> */}
+              <video
+                autoPlay
+                loop
+                muted
+                // className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+                className="relative w-full max-w-xs mx-auto sm:max-w-sm rounded-2xl"
+              >
+                <source src="/videos/gardener.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
 
               <DonationHighlight latestDonationValue={latestDonationValue} />
             </div>
