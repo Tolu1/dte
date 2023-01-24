@@ -18,16 +18,21 @@ function Hero({ latestDonationValue }: { latestDonationValue: number }) {
               </h1>
             </div>
             <div className="mt-6 lg:mt-auto">
-              <p className="text-lg leading-7 text-gray-700 lg:leading-8 lg:text-xl">
+              {/* <p className="text-lg leading-7 text-gray-700 lg:leading-8 lg:text-xl">
                 💚Join the green revolution, make a difference. Donate in ether,
                 win NFTs with amazing benefits for eco-friendly shopping, and
                 help make the world a better place.💚
+              </p> */}
+              <p className="text-lg leading-7 text-gray-700 lg:leading-8 lg:text-xl">
+                Join the fight for a sustainable future. Donate in ether and
+                make a real impact on the environment. Be part of the green
+                revolution today.💚
               </p>
               <div className="mt-10">
                 <Link
                   href="/causes"
                   title=""
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-green border border-transparent rounded-xl hover:bg-green-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-rich"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-green border border-transparent rounded-xl shadow-md hover:bg-green-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-rich"
                   role="button"
                 >
                   Make a Donation Today
