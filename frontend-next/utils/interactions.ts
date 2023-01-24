@@ -6,6 +6,7 @@ import {
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const API_URL = process.env.API_URL;
+const ETHER_SCAN_API_KEY = process.env.ETHER_SCAN_API_KEY;
 
 // provider
 function getProvider() {
@@ -35,6 +36,15 @@ function getSigner() {
   }
 
   return undefined;
+}
+
+export async function getUserBalance() {
+  const signer = getSigner();
+  const address = await signer?.getAddress();
+  if (address) {
+    const balance = await signer?.provider.getBalance(address.toLowerCase());
+    return balance;
+  }
 }
 
 // gets contract with Alchemy provider
