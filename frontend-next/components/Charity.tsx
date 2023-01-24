@@ -196,7 +196,7 @@ export function DefaultCharity({ toggleModal }: { toggleModal: () => void }) {
               className="ml-2 text-sm font-medium text-gray-900"
             >
               {" "}
-              0xDD...2E08{" "}
+              0xdd...2e08{" "}
             </a>
           </div>
 
