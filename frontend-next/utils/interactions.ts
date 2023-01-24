@@ -40,10 +40,14 @@ function getSigner() {
 
 export async function getUserBalance() {
   const signer = getSigner();
-  const address = await signer?.getAddress();
-  if (address) {
-    const balance = await signer?.provider.getBalance(address.toLowerCase());
-    return balance;
+  try {
+    const address = await signer?.getAddress();
+    if (address) {
+      const balance = await signer?.provider.getBalance(address.toLowerCase());
+      return balance;
+    }
+  } catch (err: any) {
+    console.log(err);
   }
 }
 
