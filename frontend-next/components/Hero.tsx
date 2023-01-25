@@ -32,7 +32,7 @@ function Hero({ latestDonationValue }: { latestDonationValue: number }) {
                 <Link
                   href="/causes"
                   title=""
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-green border border-transparent rounded-xl shadow-md hover:bg-green-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-rich"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-green border border-transparent rounded-xl shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-rich"
                   role="button"
                 >
                   Make a Donation Today
