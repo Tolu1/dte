@@ -49,7 +49,7 @@ function Shop() {
                   </a>
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 font-bold mt-2.5">
-                  $19.93
+                  19.93 ETH
                 </p>
               </div>
             </div>
@@ -76,7 +76,7 @@ function Shop() {
                   </a>
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 font-bold mt-2.5">
-                  $24.58
+                  24.58 ETH
                 </p>
               </div>
             </div>
@@ -103,7 +103,7 @@ function Shop() {
                   </a>
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 font-bold mt-2.5">
-                  $49.19
+                  49.19 ETH
                 </p>
               </div>
             </div>
@@ -130,7 +130,7 @@ function Shop() {
                   </a>
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 font-bold mt-2.5">
-                  $16.00
+                  16.00 ETH
                 </p>
               </div>
             </div>
@@ -157,7 +157,7 @@ function Shop() {
                   </a>
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 font-bold mt-2.5">
-                  $23.88
+                  23.88 ETH
                 </p>
               </div>
             </div>
@@ -184,7 +184,7 @@ function Shop() {
                   </a>
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 font-bold mt-2.5">
-                  $34.99
+                  34.99 ETH
                 </p>
               </div>
             </div>
@@ -211,7 +211,7 @@ function Shop() {
                   </a>
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 font-bold mt-2.5">
-                  $14.93
+                  14.93 ETH
                 </p>
               </div>
             </div>
@@ -238,7 +238,7 @@ function Shop() {
                   </a>
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 font-bold mt-2.5">
-                  $24.19
+                  24.19 ETH
                 </p>
               </div>
             </div>
