@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function CharitySpotlight() {
@@ -26,7 +27,7 @@ function CharitySpotlight() {
               Add your charity
             </a>
 
-            <a
+            <Link
               href="/causes"
               title=""
               className="
@@ -58,7 +59,7 @@ function CharitySpotlight() {
               role="button"
             >
               Get started now
-            </a>
+            </Link>
           </div>
 
           <div className="relative mt-8 md:mt-16 md:order-2">
