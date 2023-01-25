@@ -159,7 +159,9 @@ function Footer() {
             <ul className="mt-6 space-y-4">
               <li>
                 <a
-                  href="#"
+                  href="https://linktr.ee/dresstheearth"
+                  target="_blank"
+                  rel="noreferrer"
                   title=""
                   className="flex text-base text-black transition-all duration-200 hover:text-green-600 focus:text-green-600"
                 >
@@ -224,7 +226,7 @@ function Footer() {
 
               <button
                 type="submit"
-                className="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-green rounded-md shadow-sm hover:bg-green-hover focus:bg-green-700"
+                className="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-green rounded-md shadow-sm hover:bg-opacity-90 focus:bg-green-700"
               >
                 Subscribe
               </button>
