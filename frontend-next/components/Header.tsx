@@ -15,7 +15,7 @@ function Header() {
   };
 
   return (
-    <header className="fixed top-0 z-30 w-full py-3 bg-green-soft shadow-md">
+    <header className="fixed top-0 z-30 w-full py-4 lg:py-3 bg-green-soft shadow-md">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
