@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import { Link } from "react-scroll";
 import { Courier_Prime } from "@next/font/google";
 
@@ -40,22 +41,34 @@ function Community() {
               <div className="bg-white shadow-xl rounded-xl">
                 <div className="p-8 sm:py-10 sm:px-9">
                   <div className="flex justify-start flex-shrink-0 -space-x-4 overflow-hidden">
-                    <img
-                      className="inline-block rounded-full w-14 h-14 ring-2 ring-white"
-                      src="/images/member1.jpg"
-                      alt=""
-                    />
-                    <img
-                      className="inline-block rounded-full w-14 h-14 ring-2 ring-white"
-                      src="/images/member2.jpg"
-                      alt=""
-                    />
-                    <img
-                      className="inline-block rounded-full w-14 h-14 ring-2 ring-white"
-                      src="/images/member3.jpg"
-                      alt=""
-                    />
-                    <div className="inline-flex items-center justify-center bg-gray-100 rounded-full w-14 h-14 ring-2 ring-white">
+                    <div className="w-14 h-14 relative">
+                      <Image
+                        src="/images/member1.jpg"
+                        alt=""
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className=" inline-block rounded-full ring-2 ring-white"
+                      />
+                    </div>
+                    <div className="w-14 h-14 relative">
+                      <Image
+                        src="/images/member2.jpg"
+                        alt=""
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className=" inline-block rounded-full ring-2 ring-white"
+                      />
+                    </div>
+                    <div className="w-14 h-14 relative">
+                      <Image
+                        src="/images/member3.jpg"
+                        alt=""
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className=" inline-block rounded-full ring-2 ring-white"
+                      />
+                    </div>
+                    <div className="relative inline-flex items-center justify-center bg-gray-100 rounded-full w-14 h-14 ring-2 ring-white">
                       <svg
                         className="w-5 h-5 text-gray-900"
                         viewBox="0 0 20 20"
@@ -96,17 +109,33 @@ function Community() {
               <div className="bg-white shadow-xl rounded-xl">
                 <div className="p-8 sm:py-10 sm:px-9">
                   <div className="flex items-center h-14">
-                    <img className="w-auto h-10" src="/images/bag.svg" alt="" />
-                    <img
-                      className="w-auto h-10 ml-3"
-                      src="/images/leaf.svg"
-                      alt=""
-                    />
-                    <img
-                      className="w-auto h-10 ml-5"
-                      src="/images/plant.svg"
-                      alt=""
-                    />
+                    <div className="w-10 h-10 relative">
+                      <Image
+                        src="/images/bag.svg"
+                        alt=""
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className=" inline-block rounded-full ring-2 ring-white"
+                      />
+                    </div>
+                    <div className="w-10 h-10 relative ml-3">
+                      <Image
+                        src="/images/leaf.svg"
+                        alt=""
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className=" inline-block rounded-full ring-2 ring-white"
+                      />
+                    </div>
+                    <div className="w-10 h-10 relative ml-5">
+                      <Image
+                        src="/images/plant.svg"
+                        alt=""
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className=""
+                      />
+                    </div>
                   </div>
 
                   <h3 className="text-xl font-bold text-gray-900 font-pj mt-11">
