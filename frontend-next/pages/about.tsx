@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import FAQs from "@/components/FAQs";
+// import FAQs from "@/components/FAQs";
 
 function About() {
   return (
