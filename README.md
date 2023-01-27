@@ -83,7 +83,7 @@ We welcome contributions to this project. If you're interested in contributing, 
 </br>
 </br>
 
-### Add new charity confirmed
+### Add new charity confirmation
 
 ![Add charity confirmed](/frontend-next/screenshots/confirm-add-charity.png)
 </br>
