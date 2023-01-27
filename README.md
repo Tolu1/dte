@@ -4,6 +4,10 @@
 
 Welcome to Dress The Earth, a web3 dapp that allows users to donate ethers to trusted charities of their choosing. Our platform is built with Next.js and utilizes TypeScript and Tailwind CSS to provide a sleek and user-friendly experience.
 
+## Live Site
+
+https://dresstheearth.netlify.app/
+
 ## Features
 
 - Donors can easily browse a list of trusted charities and make donations using Ether.
