@@ -56,7 +56,7 @@ Live App Link: https://dresstheearth.netlify.app/
 
 # Author
 
-Toluwani Olugbesan
+Toluwani
 
 Github Link: https://github.com/Tolu1
 
